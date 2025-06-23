@@ -1,4 +1,5 @@
 import useCounterCallback from "../hooks/useCounterCallback";
+import CounterCallbackChild from "./CounterCallbackChild";
 
 export default function CounterCallback() {
   /*useCallback hooks lets you cache a function definition between re-renders until
@@ -7,10 +8,12 @@ export default function CounterCallback() {
 
   return (
     <>
-      <p>Count:{count}</p>
-      <button onClick={increment}>+1</button>
-      <button onClick={decrement}>-1</button>
-      <button onClick={reset}>reset</button>
+      <CounterCallbackChild
+        count={count}
+        increment={increment}
+        decrement={decrement}
+        reset={reset}
+      />
     </>
   );
 }

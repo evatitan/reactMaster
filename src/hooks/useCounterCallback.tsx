@@ -11,6 +11,7 @@ export default function useCounterCallback(initialValue = 0): CounterData {
   /* The function updater form setCount((c) => ...) does not depend on any external variables, 
   only the update function argument (c) */
   const increment = useCallback(() => {
+    console.log("[useCounterCallback] increment called");
     setCount((c) => c + 1);
   }, []);
 
